@@ -65,29 +65,29 @@
                 </executions>
             </plugin>
 
-            <!--<plugin>-->
-            <!--<groupId>org.apache.maven.plugins</groupId>-->
-            <!--<artifactId>maven-enforcer-plugin</artifactId>-->
-            <!--<version>3.0.0-M2</version>-->
-            <!--<executions>-->
-            <!--<execution>-->
-            <!--<id>enforce</id>-->
-            <!--<configuration>-->
-            <!--<rules>-->
-            <!--<dependencyConvergence/>-->
-            <!--<banDuplicatePomDependencyVersions>-->
-            <!--<requireReleaseDeps>-->
-            <!--<failWhenParentIsSnapshot>false</failWhenParentIsSnapshot>>-->
-            <!--<onlyWhenRelease>true</onlyWhenRelease>-->
-            <!--</requireReleaseDeps>-->
-            <!--</rules>-->
-            <!--</configuration>-->
-            <!--<goals>-->
-            <!--<goal>enforce</goal>-->
-            <!--</goals>-->
-            <!--</execution>-->
-            <!--</executions>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-enforcer-plugin</artifactId>
+                <version>3.0.0-M2</version>
+                <executions>
+                    <execution>
+                        <id>enforce</id>
+                        <configuration>
+                            <rules>
+                                <dependencyConvergence/>
+                                <banDuplicatePomDependencyVersions/>
+                                <requireReleaseDeps>
+                                    <failWhenParentIsSnapshot>false</failWhenParentIsSnapshot>>
+                                    <onlyWhenRelease>true</onlyWhenRelease>
+                                </requireReleaseDeps>
+                            </rules>
+                        </configuration>
+                        <goals>
+                            <goal>enforce</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-dependency-plugin</artifactId>
