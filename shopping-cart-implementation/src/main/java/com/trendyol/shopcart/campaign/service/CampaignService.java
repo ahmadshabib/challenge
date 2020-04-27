@@ -1,4 +1,4 @@
-package com.trendyol.shopcart.campaign.utils;
+package com.trendyol.shopcart.campaign.service;
 
 import com.trendyol.shopcart.campaign.model.Campaign;
 import com.trendyol.shopcart.common.model.DiscountType;
@@ -9,21 +9,19 @@ import com.trendyol.shopcart.shoppingcart.model.ShoppingCart;
 import com.trendyol.shopcart.shoppingcart.service.AmountDiscountStrategy;
 import com.trendyol.shopcart.shoppingcart.service.DiscountStrategy;
 import com.trendyol.shopcart.shoppingcart.service.RatioDiscountStrategy;
-import lombok.experimental.UtilityClass;
 
 import java.math.BigDecimal;
 import java.util.Arrays;
 import java.util.Objects;
 
-@UtilityClass
-public class CampaignUtils {
+public class CampaignService {
 
-  public static boolean isApplicable(Campaign campaign, Product product, Integer numberOfProducts) {
+  public  boolean isApplicable(Campaign campaign, Product product, Integer numberOfProducts) {
     return numberOfProducts >= campaign.getMinimumNumberOfProducts()
         && isSimilarCategory(product.getCategory(), campaign.getCategory());
   }
 
-  private static boolean isSimilarCategory(Category productCategory, Category category) {
+  private  boolean isSimilarCategory(Category productCategory, Category category) {
     if (productCategory.equals(category)) return true;
     else if (Objects.nonNull(category.getParentCategory())) {
       return isSimilarCategory(productCategory, category.getParentCategory());
@@ -33,7 +31,7 @@ public class CampaignUtils {
     return false;
   }
 
-  public static void applyDiscounts(ShoppingCart shoppingCart, Campaign... discounts) {
+  public  void applyDiscounts(ShoppingCart shoppingCart, Campaign... discounts) {
     shoppingCart
         .getProducts()
         .forEach(
@@ -41,15 +39,15 @@ public class CampaignUtils {
                 applyDiscountOnProductPack(shoppingCart, product, amount, discounts));
   }
 
-  private static void applyDiscountOnProductPack(
+  private  void applyDiscountOnProductPack(
       ShoppingCart shoppingCart, Product product, Integer amount, Campaign... discounts) {
     BigDecimal productsValue = product.getPrice().multiply(new BigDecimal(amount));
     Arrays.stream(discounts)
-        .filter(campaign -> CampaignUtils.isApplicable(campaign, product, amount))
+        .filter(campaign -> this.isApplicable(campaign, product, amount))
         .forEach(campaign -> applyCampaign(shoppingCart, product, amount, campaign, productsValue));
   }
 
-  private static void applyCampaign(
+  private  void applyCampaign(
       ShoppingCart shoppingCart,
       Product product,
       Integer amount,
@@ -69,7 +67,7 @@ public class CampaignUtils {
         valueToDecrease.divide(new BigDecimal(amount), 2, BigDecimal.ROUND_HALF_UP));
   }
 
-  private static BigDecimal applyCampaignDiscount(
+  private  BigDecimal applyCampaignDiscount(
       ShoppingCart shoppingCart,
       BigDecimal amount,
       Campaign campaign,

@@ -1,11 +1,10 @@
-package com.trendyol.shopcart.service;
+package com.trendyol.shopcart.shoppingcart.service;
 
 import com.trendyol.shopcart.campaign.model.Campaign;
 import com.trendyol.shopcart.coupon.model.Coupon;
 import com.trendyol.shopcart.product.model.Product;
-import com.trendyol.shopcart.shoppingcart.service.ShoppingCartServiceImpl;
-import com.trendyol.shopcart.utils.ListPrintHelper;
-import com.trendyol.shopcart.utils.MapPrintHelper;
+import com.trendyol.shopcart.shoppingcart.utils.ListPrintHelper;
+import com.trendyol.shopcart.shoppingcart.utils.MapPrintHelper;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;

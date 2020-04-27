@@ -1,11 +1,11 @@
 package com.trendyol.shopcart.shoppingcart.service;
 
 import com.trendyol.shopcart.campaign.model.Campaign;
-import com.trendyol.shopcart.campaign.utils.CampaignUtils;
+import com.trendyol.shopcart.campaign.service.CampaignService;
 import com.trendyol.shopcart.common.constants.Constants;
 import com.trendyol.shopcart.common.utils.PrintHelper;
 import com.trendyol.shopcart.coupon.model.Coupon;
-import com.trendyol.shopcart.coupon.utils.CouponUtils;
+import com.trendyol.shopcart.coupon.service.CouponService;
 import com.trendyol.shopcart.product.model.Product;
 import com.trendyol.shopcart.shoppingcart.model.ShoppingCart;
 
@@ -14,6 +14,7 @@ import java.util.Map;
 
 public class ShoppingCartServiceImpl implements ShoppingCartService<BigDecimal> {
   private ShoppingCart shoppingCart = new ShoppingCart();
+  private CampaignService campaignService = new CampaignService();
 
   public void addItem(Product product, Integer quantity) {
     this.shoppingCart.addItem(product, quantity);
@@ -28,11 +29,11 @@ public class ShoppingCartServiceImpl implements ShoppingCartService<BigDecimal> 
   }
 
   public void applyDiscounts(Campaign... discounts) {
-    CampaignUtils.applyDiscounts(shoppingCart, discounts);
+    campaignService.applyDiscounts(shoppingCart, discounts);
   }
 
   public void applyCoupons(Coupon... coupons) {
-    CouponUtils.applyCoupons(shoppingCart, coupons);
+    CouponService.applyCoupons(shoppingCart, coupons);
   }
 
   public void calculateDeliveryCost() {

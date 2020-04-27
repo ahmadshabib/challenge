@@ -1,10 +1,10 @@
-package com.trendyol.shopcart.command;
+package com.trendyol.shopcart.shoppingcart.command;
 
-import com.trendyol.shopcart.campaign.service.CampaignServiceDemoImpl;
-import com.trendyol.shopcart.coupon.service.CouponServiceDemoImpl;
-import com.trendyol.shopcart.product.service.ProductServiceDemoImpl;
-import com.trendyol.shopcart.shell.ShellHelper;
-import com.trendyol.shopcart.utils.ListPrintHelper;
+import com.trendyol.shopcart.campaign.repository.CampaignRepositoryDemoImpl;
+import com.trendyol.shopcart.coupon.repository.CouponRepositoryDemoImpl;
+import com.trendyol.shopcart.product.repository.ProductRepositoryDemoImpl;
+import com.trendyol.shopcart.shell.utils.ShellHelper;
+import com.trendyol.shopcart.shoppingcart.utils.ListPrintHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;
@@ -17,9 +17,9 @@ public class ListCommand {
 
   private final ShellHelper shellHelper;
 
-  private ProductServiceDemoImpl productService = new ProductServiceDemoImpl();
-  private CampaignServiceDemoImpl campaignService = new CampaignServiceDemoImpl();
-  private CouponServiceDemoImpl couponService = new CouponServiceDemoImpl();
+  private ProductRepositoryDemoImpl productRepositoryDemo = new ProductRepositoryDemoImpl();
+  private CampaignRepositoryDemoImpl campaignRepositoryDemo = new CampaignRepositoryDemoImpl();
+  private CouponRepositoryDemoImpl couponRepositoryDemo = new CouponRepositoryDemoImpl();
 
   @Autowired
   public ListCommand(ShellHelper shellHelper) {
@@ -28,17 +28,17 @@ public class ListCommand {
 
   @ShellMethod("Displays greeting message to the user whose name is supplied")
   public String product(@ShellOption(arity = 0, defaultValue = "list") String list) {
-    return getMessageToPrint(new ListPrintHelper(), productService.retrieveAll(), Type.PRODUCT);
+    return getMessageToPrint(new ListPrintHelper(), productRepositoryDemo.retrieveAll(), Type.PRODUCT);
   }
 
   @ShellMethod("Displays greeting message to the user whose name is supplied")
   public String campaign(@ShellOption(arity = 0, defaultValue = "list") String list) {
-    return getMessageToPrint(new ListPrintHelper(), campaignService.retrieveAll(), Type.CAMPAIGN);
+    return getMessageToPrint(new ListPrintHelper(), campaignRepositoryDemo.retrieveAll(), Type.CAMPAIGN);
   }
 
   @ShellMethod("Displays greeting message to the user whose name is supplied")
   public String coupon(@ShellOption(arity = 0, defaultValue = "list") String list) {
-    return getMessageToPrint(new ListPrintHelper(), couponService.retrieveAll(), Type.COUPON);
+    return getMessageToPrint(new ListPrintHelper(), couponRepositoryDemo.retrieveAll(), Type.COUPON);
   }
 
   public String getMessageToPrint(ListPrintHelper listPrintHelper, List list, Type type) {

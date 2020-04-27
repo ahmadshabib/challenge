@@ -1,5 +1,6 @@
-package com.trendyol.shopcart.shell;
+package com.trendyol.shopcart.shell.utils;
 
+import com.trendyol.shopcart.shell.model.PromptColor;
 import org.jline.terminal.Terminal;
 import org.jline.utils.AttributedStringBuilder;
 import org.jline.utils.AttributedStyle;

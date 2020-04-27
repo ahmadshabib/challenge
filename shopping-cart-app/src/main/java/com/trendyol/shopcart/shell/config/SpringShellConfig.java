@@ -1,6 +1,6 @@
-package com.trendyol.shopcart.config;
+package com.trendyol.shopcart.shell.config;
 
-import com.trendyol.shopcart.shell.ShellHelper;
+import com.trendyol.shopcart.shell.utils.ShellHelper;
 import org.jline.terminal.Terminal;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

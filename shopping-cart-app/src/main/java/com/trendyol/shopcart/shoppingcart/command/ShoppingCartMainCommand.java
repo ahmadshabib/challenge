@@ -1,7 +1,7 @@
-package com.trendyol.shopcart.command;
+package com.trendyol.shopcart.shoppingcart.command;
 
-import com.trendyol.shopcart.service.ShoppingCliServiceImpl;
-import com.trendyol.shopcart.shell.ShellHelper;
+import com.trendyol.shopcart.shoppingcart.service.ShoppingCliServiceImpl;
+import com.trendyol.shopcart.shell.utils.ShellHelper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.shell.standard.ShellComponent;
 import org.springframework.shell.standard.ShellMethod;

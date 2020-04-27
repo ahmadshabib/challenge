@@ -1,4 +1,4 @@
-package com.trendyol.shopcart.coupon.utils;
+package com.trendyol.shopcart.coupon.service;
 
 import com.trendyol.shopcart.common.model.DiscountType;
 import com.trendyol.shopcart.common.utils.DiscountUtils;
@@ -12,7 +12,7 @@ import com.trendyol.shopcart.shoppingcart.service.RatioDiscountStrategy;
 import java.math.BigDecimal;
 import java.util.Arrays;
 
-public class CouponUtils {
+public class CouponService {
 
   public static void applyCoupons(ShoppingCart shoppingCart, Coupon... coupons) {
     Arrays.stream(coupons)

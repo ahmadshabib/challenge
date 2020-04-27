@@ -1,6 +1,7 @@
-package com.trendyol.shopcart.campaign.service;
+package com.trendyol.shopcart.campaign.repository;
 
 import com.trendyol.shopcart.campaign.model.Campaign;
+import com.trendyol.shopcart.campaign.repository.CampaignRepositoryDemoImpl;
 import com.trendyol.shopcart.common.exception.ElementNotFoundException;
 import com.trendyol.shopcart.common.model.DiscountType;
 import com.trendyol.shopcart.product.model.Category;
@@ -11,15 +12,15 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
-public class CampaignServiceDemoImplTest {
+public class CampaignRepositoryDemoImplTest {
 
 
-  private CampaignServiceDemoImpl campaignService;
+  private CampaignRepositoryDemoImpl campaignService;
   private Campaign foodCampaign, fashionCampaign;
 
   @Before
   public void setup() {
-    campaignService = new CampaignServiceDemoImpl();
+    campaignService = new CampaignRepositoryDemoImpl();
     Category fashionCategory = new Category("Fashion");
     Category foodCategory = new Category("Food");
     foodCampaign = new Campaign(100,foodCategory, new BigDecimal("10.00"), 2, DiscountType.RATIO);

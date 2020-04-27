@@ -4,7 +4,7 @@ import com.trendyol.shopcart.common.exception.ElementNotFoundException;
 
 import java.util.List;
 
-public interface DaoService<T, IDT> {
+public interface DaoRepository<T, IDT> {
 
   void create(T obj);
 

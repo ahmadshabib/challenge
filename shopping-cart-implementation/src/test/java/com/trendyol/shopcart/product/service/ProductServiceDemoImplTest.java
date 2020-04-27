@@ -3,6 +3,7 @@ package com.trendyol.shopcart.product.service;
 import com.trendyol.shopcart.common.exception.ElementNotFoundException;
 import com.trendyol.shopcart.product.model.Category;
 import com.trendyol.shopcart.product.model.Product;
+import com.trendyol.shopcart.product.repository.ProductRepositoryDemoImpl;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -12,12 +13,12 @@ import java.math.BigDecimal;
 
 public class ProductServiceDemoImplTest {
 
-  private ProductServiceDemoImpl productService;
+  private ProductRepositoryDemoImpl productService;
   private Product apple, pants;
 
   @Before
   public void setup() {
-    productService = new ProductServiceDemoImpl();
+    productService = new ProductRepositoryDemoImpl();
     Category fashionCategory = new Category("Fashion");
     Category foodCategory = new Category("Food");
     apple = new Product(10, "apple", new BigDecimal("10.00"), foodCategory);

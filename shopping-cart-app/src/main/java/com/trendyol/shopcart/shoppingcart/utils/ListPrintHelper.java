@@ -1,4 +1,4 @@
-package com.trendyol.shopcart.utils;
+package com.trendyol.shopcart.shoppingcart.utils;
 
 import com.trendyol.shopcart.shell.utils.CollectionPrintHelper;
 

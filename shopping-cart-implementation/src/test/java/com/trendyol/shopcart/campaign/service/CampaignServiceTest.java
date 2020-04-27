@@ -1,4 +1,4 @@
-package com.trendyol.shopcart.campaign.utils;
+package com.trendyol.shopcart.campaign.service;
 
 import com.trendyol.shopcart.campaign.model.Campaign;
 import com.trendyol.shopcart.common.model.DiscountType;
@@ -10,8 +10,9 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
-public class CampaignUtilsTest {
+public class CampaignServiceTest {
 
+  CampaignService campaignService = new CampaignService();
   private Product product;
 
   @Before
@@ -24,15 +25,15 @@ public class CampaignUtilsTest {
   public void campaignNotApplicableTest() {
     Campaign campaign =
         new Campaign(1, new Category("fashion"), new BigDecimal(50), 2, DiscountType.RATIO);
-    Assert.assertFalse(CampaignUtils.isApplicable(campaign, product, 2));
+    Assert.assertFalse(campaignService.isApplicable(campaign, product, 2));
     campaign.setCategory(new Category(("food")));
-    Assert.assertFalse(CampaignUtils.isApplicable(campaign, product, 1));
+    Assert.assertFalse(campaignService.isApplicable(campaign, product, 1));
   }
 
   @Test
   public void campaignApplicableTest() {
     Campaign campaign =
         new Campaign(1, new Category("food"), new BigDecimal(50), 2, DiscountType.RATIO);
-    Assert.assertTrue(CampaignUtils.isApplicable(campaign, product, 2));
+    Assert.assertTrue(campaignService.isApplicable(campaign, product, 2));
   }
 }

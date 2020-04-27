@@ -1,7 +1,7 @@
-package com.trendyol.shopcart.campaign.service;
+package com.trendyol.shopcart.campaign.repository;
 
 import com.trendyol.shopcart.common.exception.ElementNotFoundException;
-import com.trendyol.shopcart.common.service.DaoService;
+import com.trendyol.shopcart.common.service.DaoRepository;
 import com.trendyol.shopcart.common.constants.Constants;
 import com.trendyol.shopcart.common.model.DiscountType;
 import com.trendyol.shopcart.campaign.model.Campaign;
@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class CampaignServiceDemoImpl implements DaoService<Campaign, Integer> {
+public class CampaignRepositoryDemoImpl implements DaoRepository<Campaign, Integer> {
   private static AtomicReference<HashSet<Campaign>> campaigns =
       new AtomicReference<>(new HashSet<>());
 

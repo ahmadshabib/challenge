@@ -3,6 +3,7 @@ package com.trendyol.shopcart.coupon.service;
 import com.trendyol.shopcart.common.exception.ElementNotFoundException;
 import com.trendyol.shopcart.common.model.DiscountType;
 import com.trendyol.shopcart.coupon.model.Coupon;
+import com.trendyol.shopcart.coupon.repository.CouponRepositoryDemoImpl;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -10,14 +11,14 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
-public class CouponServiceDemoImplTest {
+public class CouponRepositoryDemoImplTest {
 
-  private CouponServiceDemoImpl couponService;
+  private CouponRepositoryDemoImpl couponService;
   private Coupon thirtyTLCoupon, twentyPercentCoupon;
 
   @Before
   public void setup() {
-    couponService = new CouponServiceDemoImpl();
+    couponService = new CouponRepositoryDemoImpl();
     thirtyTLCoupon =
         new Coupon(5, new BigDecimal("30.00"), new BigDecimal("20.00"), DiscountType.AMOUNT);
     twentyPercentCoupon =

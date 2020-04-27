@@ -1,8 +1,8 @@
-package com.trendyol.shopcart.coupon.service;
+package com.trendyol.shopcart.coupon.repository;
 
 import com.trendyol.shopcart.common.exception.ElementNotFoundException;
-import com.trendyol.shopcart.common.service.DaoService;
 import com.trendyol.shopcart.common.model.DiscountType;
+import com.trendyol.shopcart.common.service.DaoRepository;
 import com.trendyol.shopcart.coupon.model.Coupon;
 
 import java.math.BigDecimal;
@@ -11,17 +11,17 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
-public class CouponServiceDemoImpl implements DaoService<Coupon, Integer> {
+public class CouponRepositoryDemoImpl implements DaoRepository<Coupon, Integer> {
 
   private static AtomicReference<HashSet<Coupon>> coupons = new AtomicReference<>(new HashSet<>());
 
   static {
     coupons
         .get()
-        .add(new Coupon(1,new BigDecimal("50.00"), new BigDecimal("20.00"), DiscountType.AMOUNT));
+        .add(new Coupon(1, new BigDecimal("50.00"), new BigDecimal("20.00"), DiscountType.AMOUNT));
     coupons
         .get()
-        .add(new Coupon(2,new BigDecimal("70.00"), new BigDecimal("10.00"), DiscountType.RATIO));
+        .add(new Coupon(2, new BigDecimal("70.00"), new BigDecimal("10.00"), DiscountType.RATIO));
   }
 
   @Override

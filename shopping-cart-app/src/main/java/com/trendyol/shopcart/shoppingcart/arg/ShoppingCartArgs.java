@@ -1,4 +1,4 @@
-package com.trendyol.shopcart.arg;
+package com.trendyol.shopcart.shoppingcart.arg;
 
 import com.beust.jcommander.Parameter;
 

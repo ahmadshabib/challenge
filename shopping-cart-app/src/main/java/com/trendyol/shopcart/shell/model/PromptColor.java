@@ -1,4 +1,4 @@
-package com.trendyol.shopcart.shell;
+package com.trendyol.shopcart.shell.model;
 
 public enum PromptColor {
   RED(1),
