@@ -11,14 +11,15 @@ import org.junit.Test;
 
 import java.math.BigDecimal;
 
-public class CouponRepositoryDemoImplTest {
+public class CouponServiceDemoImplTest {
 
-  private CouponRepositoryDemoImpl couponService;
+  private CouponServiceImpl couponService;
   private Coupon thirtyTLCoupon, twentyPercentCoupon;
 
   @Before
   public void setup() {
-    couponService = new CouponRepositoryDemoImpl();
+    couponService = new CouponServiceImpl();
+    couponService.couponRepositoryDemo = new CouponRepositoryDemoImpl();
     thirtyTLCoupon =
         new Coupon(5, new BigDecimal("30.00"), new BigDecimal("20.00"), DiscountType.AMOUNT);
     twentyPercentCoupon =

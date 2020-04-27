@@ -13,12 +13,13 @@ import java.math.BigDecimal;
 
 public class ProductServiceDemoImplTest {
 
-  private ProductRepositoryDemoImpl productService;
+  private ProductServiceImpl productService;
   private Product apple, pants;
 
   @Before
   public void setup() {
-    productService = new ProductRepositoryDemoImpl();
+    productService = new ProductServiceImpl();
+    productService.productRepositoryDemo = new ProductRepositoryDemoImpl();
     Category fashionCategory = new Category("Fashion");
     Category foodCategory = new Category("Food");
     apple = new Product(10, "apple", new BigDecimal("10.00"), foodCategory);

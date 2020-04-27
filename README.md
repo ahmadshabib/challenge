@@ -84,7 +84,7 @@ In order yo use it you have the following command options:
 
 ***Github actions pipeline*** was used as well
 
-Project have unit test coverage of ***95%*** for both line and branch.
+Project have unit test coverage of ***100%*** for both line and branch.
 
 ***Dependency enforcer and checker*** were both used.
 

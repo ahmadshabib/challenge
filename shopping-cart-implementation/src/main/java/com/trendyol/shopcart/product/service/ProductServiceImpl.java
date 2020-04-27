@@ -28,4 +28,8 @@ public class ProductServiceImpl implements ProductService<Product,Integer> {
   public List<Product> retrieveAll() {
     return productRepositoryDemo.retrieveAll();
   }
+
+  void delete(Product product){
+    productRepositoryDemo.delete(product);
+  }
 }

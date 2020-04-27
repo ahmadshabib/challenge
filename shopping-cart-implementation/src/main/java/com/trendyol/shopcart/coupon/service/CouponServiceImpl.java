@@ -34,6 +34,10 @@ public class CouponServiceImpl implements CouponService<ShoppingCart, Coupon> {
     return couponRepositoryDemo.retrieveAll();
   }
 
+  void delete(Coupon coupon) {
+    couponRepositoryDemo.delete(coupon);
+  }
+
   @Override
   public void applyCoupons(ShoppingCart shoppingCart, Coupon... coupons) {
     Arrays.stream(coupons)
