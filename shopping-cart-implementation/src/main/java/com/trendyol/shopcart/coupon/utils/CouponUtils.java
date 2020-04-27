@@ -33,7 +33,8 @@ public class CouponUtils {
               shoppingCart.getTotalAmount().subtract(shoppingCart.getDiscount().getTotalDiscount()),
               coupon,
               new RatioDiscountStrategy());
-    } else if (coupon.getDiscountType() == DiscountType.AMOUNT) {
+    }
+    if (coupon.getDiscountType() == DiscountType.AMOUNT) {
       valueToDecrease =
           applyCouponDiscount(
               shoppingCart,

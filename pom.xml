@@ -20,8 +20,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- Jacoco -->
-        <jacoco.line.ratio>0.70</jacoco.line.ratio>
-        <jacoco.branch.ratio>0.70</jacoco.branch.ratio>
+        <jacoco.line.ratio>0.95</jacoco.line.ratio>
+        <jacoco.branch.ratio>0.95</jacoco.branch.ratio>
         <jacoco.version>0.8.5</jacoco.version>
         <surefire.version>2.18.1</surefire.version>
         <checkstyle-maven-plugin.version>3.0.0</checkstyle-maven-plugin.version>

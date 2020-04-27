@@ -6,10 +6,10 @@ import java.math.BigDecimal;
 
 @Data
 public class Discount {
-  private BigDecimal totalDiscount = BigDecimal.ZERO;
-  private BigDecimal couponDiscount = BigDecimal.ZERO;
-  private BigDecimal campaignDiscount = BigDecimal.ZERO;
-  private BigDecimal deliveryCost = BigDecimal.ZERO;
+  private BigDecimal totalDiscount = new BigDecimal("0.00");
+  private BigDecimal couponDiscount = new BigDecimal("0.00");
+  private BigDecimal campaignDiscount = new BigDecimal("0.00");
+  private BigDecimal deliveryCost = new BigDecimal("0.00");
 
   public void increaseTotalDiscount(BigDecimal additionalValue) {
     this.totalDiscount = totalDiscount.add(additionalValue);

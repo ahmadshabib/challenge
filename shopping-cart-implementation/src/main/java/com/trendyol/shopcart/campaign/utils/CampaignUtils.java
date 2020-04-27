@@ -59,7 +59,8 @@ public class CampaignUtils {
     if (campaign.getDiscountType() == DiscountType.RATIO) {
       valueToDecrease =
           applyCampaignDiscount(shoppingCart, productsValue, campaign, new RatioDiscountStrategy());
-    } else if (campaign.getDiscountType() == DiscountType.AMOUNT) {
+    }
+    if (campaign.getDiscountType() == DiscountType.AMOUNT) {
       valueToDecrease =
           applyCampaignDiscount(
               shoppingCart, productsValue, campaign, new AmountDiscountStrategy());
