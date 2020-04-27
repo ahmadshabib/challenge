@@ -9,5 +9,5 @@ RUN mvn -B -T 4C clean install -DskipTests
 # Package stage
 #
 FROM gcr.io/distroless/java
-COPY --from=build /usr/src/app/mainApp/target/shopping*.jar /usr/app/challenge.jar
+COPY --from=build /usr/src/app/shopping-cart-app/target/shopping-cart-app-*.jar /usr/app/challenge.jar
 ENTRYPOINT ["java","-jar","/usr/app/challenge.jar"]
