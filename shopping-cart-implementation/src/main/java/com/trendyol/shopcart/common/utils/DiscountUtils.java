@@ -8,6 +8,8 @@ import java.math.BigDecimal;
 
 public class DiscountUtils {
 
+  private DiscountUtils() {}
+
   public static BigDecimal applyDiscount(
       ShoppingCart shoppingCart,
       BigDecimal amount,

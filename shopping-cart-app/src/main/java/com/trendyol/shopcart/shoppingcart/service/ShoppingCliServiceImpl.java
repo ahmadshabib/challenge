@@ -5,6 +5,7 @@ import com.trendyol.shopcart.coupon.model.Coupon;
 import com.trendyol.shopcart.product.model.Product;
 import com.trendyol.shopcart.shoppingcart.utils.ListPrintHelper;
 import com.trendyol.shopcart.shoppingcart.utils.MapPrintHelper;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.ArrayList;
@@ -16,7 +17,8 @@ public class ShoppingCliServiceImpl {
   private HashSet<Campaign> campaigns = new HashSet<>();
   private HashSet<Coupon> coupons = new HashSet<>();
 
-  private ShoppingCartServiceImpl shoppingCartService = new ShoppingCartServiceImpl();
+  @Autowired
+  private ShoppingCartServiceImpl shoppingCartService;
 
   public void selectItem(Product product, Integer quantity) {
     shoppingCartService.addItem(product, quantity);

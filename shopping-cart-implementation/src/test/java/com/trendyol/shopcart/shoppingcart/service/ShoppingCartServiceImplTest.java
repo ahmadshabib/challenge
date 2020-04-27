@@ -1,8 +1,10 @@
 package com.trendyol.shopcart.shoppingcart.service;
 
 import com.trendyol.shopcart.campaign.model.Campaign;
+import com.trendyol.shopcart.campaign.service.CampaignServiceImpl;
 import com.trendyol.shopcart.common.model.DiscountType;
 import com.trendyol.shopcart.coupon.model.Coupon;
+import com.trendyol.shopcart.coupon.service.CouponServiceImpl;
 import com.trendyol.shopcart.product.model.Category;
 import com.trendyol.shopcart.product.model.Product;
 import org.junit.After;
@@ -27,6 +29,8 @@ public class ShoppingCartServiceImplTest {
   @Before
   public void setup() {
     shoppingCartService = new ShoppingCartServiceImpl();
+    shoppingCartService.campaignService = new CampaignServiceImpl();
+    shoppingCartService.couponServiceImpl = new CouponServiceImpl();
     foodCategory = new Category("food");
     fashionCategory = new Category("fashion");
     pantsCategory = new Category("pants", fashionCategory);

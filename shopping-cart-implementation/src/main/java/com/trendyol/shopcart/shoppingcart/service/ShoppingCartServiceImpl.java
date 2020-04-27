@@ -1,20 +1,28 @@
 package com.trendyol.shopcart.shoppingcart.service;
 
 import com.trendyol.shopcart.campaign.model.Campaign;
-import com.trendyol.shopcart.campaign.service.CampaignService;
+import com.trendyol.shopcart.campaign.service.CampaignServiceImpl;
 import com.trendyol.shopcart.common.constants.Constants;
 import com.trendyol.shopcart.common.utils.PrintHelper;
 import com.trendyol.shopcart.coupon.model.Coupon;
-import com.trendyol.shopcart.coupon.service.CouponService;
+import com.trendyol.shopcart.coupon.service.CouponServiceImpl;
 import com.trendyol.shopcart.product.model.Product;
 import com.trendyol.shopcart.shoppingcart.model.ShoppingCart;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.Map;
 
+@Component
 public class ShoppingCartServiceImpl implements ShoppingCartService<BigDecimal> {
   private ShoppingCart shoppingCart = new ShoppingCart();
-  private CampaignService campaignService = new CampaignService();
+
+  @Autowired
+  CampaignServiceImpl campaignService;
+
+  @Autowired
+  CouponServiceImpl couponServiceImpl;
 
   public void addItem(Product product, Integer quantity) {
     this.shoppingCart.addItem(product, quantity);
@@ -33,7 +41,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService<BigDecimal> 
   }
 
   public void applyCoupons(Coupon... coupons) {
-    CouponService.applyCoupons(shoppingCart, coupons);
+    couponServiceImpl.applyCoupons(shoppingCart, coupons);
   }
 
   public void calculateDeliveryCost() {

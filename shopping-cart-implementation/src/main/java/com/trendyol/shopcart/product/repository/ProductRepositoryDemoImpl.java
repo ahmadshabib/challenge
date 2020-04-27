@@ -4,6 +4,7 @@ import com.trendyol.shopcart.common.constants.Constants;
 import com.trendyol.shopcart.common.exception.ElementNotFoundException;
 import com.trendyol.shopcart.common.service.DaoRepository;
 import com.trendyol.shopcart.product.model.Product;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
+@Component
 public class ProductRepositoryDemoImpl implements DaoRepository<Product, Integer> {
 
   private static AtomicReference<HashSet<Product>> products =

@@ -4,6 +4,7 @@ import com.trendyol.shopcart.common.exception.ElementNotFoundException;
 import com.trendyol.shopcart.common.model.DiscountType;
 import com.trendyol.shopcart.common.service.DaoRepository;
 import com.trendyol.shopcart.coupon.model.Coupon;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -11,6 +12,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
+@Component
 public class CouponRepositoryDemoImpl implements DaoRepository<Coupon, Integer> {
 
   private static AtomicReference<HashSet<Coupon>> coupons = new AtomicReference<>(new HashSet<>());

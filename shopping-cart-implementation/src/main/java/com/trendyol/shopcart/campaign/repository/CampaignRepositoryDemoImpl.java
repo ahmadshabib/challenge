@@ -5,6 +5,7 @@ import com.trendyol.shopcart.common.service.DaoRepository;
 import com.trendyol.shopcart.common.constants.Constants;
 import com.trendyol.shopcart.common.model.DiscountType;
 import com.trendyol.shopcart.campaign.model.Campaign;
+import org.springframework.stereotype.Component;
 
 import java.math.BigDecimal;
 import java.util.ArrayList;
@@ -12,6 +13,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicReference;
 
+@Component
 public class CampaignRepositoryDemoImpl implements DaoRepository<Campaign, Integer> {
   private static AtomicReference<HashSet<Campaign>> campaigns =
       new AtomicReference<>(new HashSet<>());

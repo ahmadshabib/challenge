@@ -12,7 +12,9 @@ import java.util.stream.Collectors;
 
 public class PrintHelper {
 
-  public static String getBigDecimalFormatted(BigDecimal bigDecimal) {
+  private PrintHelper() {}
+
+  private static String getBigDecimalFormatted(BigDecimal bigDecimal) {
     DecimalFormat df = new DecimalFormat("#,###.00");
     return df.format(bigDecimal);
   }

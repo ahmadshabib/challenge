@@ -21,6 +21,10 @@
             <artifactId>shopping-cart-interface</artifactId>
             <version>${project.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot</artifactId>
+        </dependency>
         <!-- Testing Related -->
         <dependency>
             <groupId>junit</groupId>
