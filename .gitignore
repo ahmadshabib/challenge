@@ -1,16 +1,37 @@
-# Compiled class file
+# -------------- #
+# ---IntelliJ--- #
+# -------------- #
+*.iml
+.idea/
+*.ipr
+*.iws
+venv*
+
+# ------------ #
+# --- GIT ---- #
+# ------------ #
+*.bak
+*.orig
+
+# ------------ #
+# --- Java --- #
+# ------------ #
 *.class
 
-# Log file
+# ------------- #
+# --- Maven --- #
+# ------------- #
+target/
+pom.xml.*
+
+# ----------- #
+# --- Log --- #
+# ----------- #
 *.log
 
-# BlueJ files
-*.ctxt
-
-# Mobile Tools for Java (J2ME)
-.mtj.tmp/
-
-# Package Files #
+# --------------------- #
+# --- Package Files --- #
+# --------------------- #
 *.jar
 *.war
 *.nar
@@ -21,3 +42,11 @@
 
 # virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
 hs_err_pid*
+
+
+# BlueJ files
+*.ctxt
+
+# Mobile Tools for Java (J2ME)
+.mtj.tmp/
+
