@@ -1,6 +1,6 @@
-# Trendyol shopping cart challenge
+# Shopping cart challenge
 
-This repository has the proposed solution for the second question of trendyol recruitment process.
+This repository has the proposed solution for the second question of recruitment process.
 
 ## Architecture
 

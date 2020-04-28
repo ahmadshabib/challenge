@@ -17,12 +17,12 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.trendyol.shopcart</groupId>
+            <groupId>com.challenge.shopcart</groupId>
             <artifactId>shopping-cart-implementation</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
         <dependency>
-            <groupId>com.trendyol.shopcart</groupId>
+            <groupId>com.challenge.shopcart</groupId>
             <artifactId>shopping-cart-interface</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

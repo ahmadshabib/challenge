@@ -4,7 +4,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.trendyol.shopcart</groupId>
+    <groupId>com.challenge.shopcart</groupId>
     <artifactId>root</artifactId>
     <packaging>pom</packaging>
     <version>1.0-SNAPSHOT</version>
@@ -15,7 +15,7 @@
     </modules>
 
 
-    <name>Trendyol Challenge</name>
+    <name>Challenge</name>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -177,11 +177,11 @@
                 </executions>
                 <configuration>
                     <excludes>
-                        <exclude>**/com/trendyol/shopcart/product/model/**</exclude>
-                        <exclude>**/com/trendyol/shopcart/campaign/model/**</exclude>
-                        <exclude>**/com/trendyol/shopcart/common/model/**</exclude>
-                        <exclude>**/com/trendyol/shopcart/coupon/model/**</exclude>
-                        <exclude>**/com/trendyol/shopcart/shoppingcart/model/**</exclude>
+                        <exclude>**/com/challenge/shopcart/product/model/**</exclude>
+                        <exclude>**/com/challenge/shopcart/campaign/model/**</exclude>
+                        <exclude>**/com/challenge/shopcart/common/model/**</exclude>
+                        <exclude>**/com/challenge/shopcart/coupon/model/**</exclude>
+                        <exclude>**/com/challenge/shopcart/shoppingcart/model/**</exclude>
                     </excludes>
                     <haltOnFailure>true</haltOnFailure>
                 </configuration>
