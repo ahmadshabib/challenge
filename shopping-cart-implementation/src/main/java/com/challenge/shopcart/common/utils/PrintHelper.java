@@ -6,7 +6,9 @@ import com.challenge.shopcart.shoppingcart.model.ShoppingCart;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.text.NumberFormat;
 import java.util.List;
+import java.util.Locale;
 import java.util.Map;
 import java.util.stream.Collectors;
 
@@ -15,7 +17,9 @@ public class PrintHelper {
   private PrintHelper() {}
 
   private static String getBigDecimalFormatted(BigDecimal bigDecimal) {
-    DecimalFormat df = new DecimalFormat("#,###.00");
+    NumberFormat nf = NumberFormat.getNumberInstance(Locale.US);
+    DecimalFormat df = (DecimalFormat) nf;
+    df.applyLocalizedPattern("#,###.00");
     return df.format(bigDecimal);
   }
 

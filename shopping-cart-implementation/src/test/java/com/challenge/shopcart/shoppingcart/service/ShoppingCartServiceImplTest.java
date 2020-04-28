@@ -202,7 +202,8 @@ public class ShoppingCartServiceImplTest {
     shoppingCartService.calculateDeliveryCost();
     shoppingCartService.print();
     String expected =
-        "Category Title: food -- Product Name: bread -- Product Quantity: 2 -- Original Price: 20,00 -- Price After Discount: 20,00\r\nTotal Price: 23,11 -- Shipping Price: 3,11";
+        "Category Title: food -- Product Name: bread -- Product Quantity: 2 -- Original Price: 20.00 -- Price After Discount: 20.00" + System.lineSeparator()
+            + "Total Price: 23.11 -- Shipping Price: 3.11";
     Assert.assertEquals(expected, outContent.toString().trim());
   }
 
@@ -214,9 +215,9 @@ public class ShoppingCartServiceImplTest {
     shoppingCartService.calculateDeliveryCost();
     shoppingCartService.print();
     String expected =
-        "Category Title: food -- Product Name: bread -- Product Quantity: 2 -- Original Price: 20,00 -- Price After Discount: 18,18\r\n"
-            + "Category Title: fashion -- Product Name: pants -- Product Quantity: 2 -- Original Price: 200,00 -- Price After Discount: 181,82\r\n"
-            + "Total Price: 203,23 -- Shipping Price: 3,23";
+        "Category Title: food -- Product Name: bread -- Product Quantity: 2 -- Original Price: 20.00 -- Price After Discount: 18.18" + System.lineSeparator()
+            + "Category Title: fashion -- Product Name: pants -- Product Quantity: 2 -- Original Price: 200.00 -- Price After Discount: 181.82" + System.lineSeparator()
+            + "Total Price: 203.23 -- Shipping Price: 3.23";
     Assert.assertEquals(expected, outContent.toString().trim());
   }
 
@@ -228,9 +229,9 @@ public class ShoppingCartServiceImplTest {
     shoppingCartService.calculateDeliveryCost();
     shoppingCartService.print();
     String expected =
-        "Category Title: food -- Product Name: bread -- Product Quantity: 2 -- Original Price: 20,00 -- Price After Discount: 18,00\r\n"
-            + "Category Title: fashion -- Product Name: pants -- Product Quantity: 2 -- Original Price: 200,00 -- Price After Discount: 200,00\r\n"
-            + "Total Price: 221,23 -- Shipping Price: 3,23";
+        "Category Title: food -- Product Name: bread -- Product Quantity: 2 -- Original Price: 20.00 -- Price After Discount: 18.00" + System.lineSeparator()
+            + "Category Title: fashion -- Product Name: pants -- Product Quantity: 2 -- Original Price: 200.00 -- Price After Discount: 200.00" + System.lineSeparator()
+            + "Total Price: 221.23 -- Shipping Price: 3.23";
     Assert.assertEquals(expected, outContent.toString().trim());
   }
 
@@ -249,9 +250,9 @@ public class ShoppingCartServiceImplTest {
     shoppingCartService.calculateDeliveryCost();
     shoppingCartService.print();
     String expected =
-        "Category Title: food -- Product Name: bread -- Product Quantity: 2 -- Original Price: 20,00 -- Price After Discount: 14,48\r\n"
-            + "Category Title: fashion -- Product Name: pants -- Product Quantity: 2 -- Original Price: 200,00 -- Price After Discount: 154,72\r\n"
-            + "Total Price: 172,43 -- Shipping Price: 3,23";
+        "Category Title: food -- Product Name: bread -- Product Quantity: 2 -- Original Price: 20.00 -- Price After Discount: 14.48" + System.lineSeparator()
+            + "Category Title: fashion -- Product Name: pants -- Product Quantity: 2 -- Original Price: 200.00 -- Price After Discount: 154.72" + System.lineSeparator()
+            + "Total Price: 172.43 -- Shipping Price: 3.23";
     Assert.assertEquals(expected, outContent.toString().trim());
   }
 }
