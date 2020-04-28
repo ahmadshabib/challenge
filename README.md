@@ -1,4 +1,6 @@
 # Shopping cart challenge
+[![Build Status](https://github.com/ahmadshabib/challenge/workflows/Java%20CI%20with%20Maven/badge.svg)](https://github.com/ahmadshabib/challenge)
+[![codecov](https://codecov.io/gh/ahmadshabib/challenge/branch/master/graph/badge.svg)](https://codecov.io/gh/ahmadshabib/challenge)
 
 This repository has the proposed solution for the second question of recruitment process.
 
