@@ -24,6 +24,12 @@ jobs:
         run: mvn -B -T 4C clean install -DskipTests
       - name: Run tests
         run: mvn -T 4C test
-      - uses: codecov/codecov-action@v1
+      - name: Code Covarage
+        uses: codecov/codecov-action@v1
         with:
           file: ./shopping-cart-implementation/target/site/jacoco/jacoco.xml
+      - name: SonarCloud Scan
+        run: mvn clean package org.sonarsource.scanner.maven:sonar-maven-plugin:sonar
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
