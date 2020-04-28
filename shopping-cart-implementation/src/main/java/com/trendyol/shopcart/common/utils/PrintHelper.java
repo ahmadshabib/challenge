@@ -26,7 +26,7 @@ public class PrintHelper {
         .forEach(PrintHelper::printFormatted);
     System.out.println(
         String.format(
-            "%s -- %s",
+            "Total Price: %s -- Shipping Price: %s",
             PrintHelper.getBigDecimalFormatted(totalAmount),
             PrintHelper.getBigDecimalFormatted(deliveryCost)));
   }
@@ -40,7 +40,7 @@ public class PrintHelper {
   private static String formattedString(
       Category category, Map.Entry<Product, Integer> productIntegerEntry) {
     return String.format(
-        "%s -- %s -- %d -- %s -- %s",
+        "Category Title: %s -- Product Name: %s -- Product Quantity: %d -- Original Price: %s -- Price After Discount: %s",
         category.getTitle(),
         productIntegerEntry.getKey().getTitle(),
         productIntegerEntry.getValue(),

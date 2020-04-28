@@ -201,7 +201,8 @@ public class ShoppingCartServiceImplTest {
     shoppingCartService.addItem(bread, 2);
     shoppingCartService.calculateDeliveryCost();
     shoppingCartService.print();
-    String expected = "food -- bread -- 2 -- 20,00 -- 20,00\r\n23,11 -- 3,11";
+    String expected =
+        "Category Title: food -- Product Name: bread -- Product Quantity: 2 -- Original Price: 20,00 -- Price After Discount: 20,00\r\nTotal Price: 23,11 -- Shipping Price: 3,11";
     Assert.assertEquals(expected, outContent.toString().trim());
   }
 
@@ -213,9 +214,9 @@ public class ShoppingCartServiceImplTest {
     shoppingCartService.calculateDeliveryCost();
     shoppingCartService.print();
     String expected =
-        "food -- bread -- 2 -- 20,00 -- 18,18\r\n"
-            + "fashion -- pants -- 2 -- 200,00 -- 181,82\r\n"
-            + "203,23 -- 3,23";
+        "Category Title: food -- Product Name: bread -- Product Quantity: 2 -- Original Price: 20,00 -- Price After Discount: 18,18\r\n"
+            + "Category Title: fashion -- Product Name: pants -- Product Quantity: 2 -- Original Price: 200,00 -- Price After Discount: 181,82\r\n"
+            + "Total Price: 203,23 -- Shipping Price: 3,23";
     Assert.assertEquals(expected, outContent.toString().trim());
   }
 
@@ -227,9 +228,9 @@ public class ShoppingCartServiceImplTest {
     shoppingCartService.calculateDeliveryCost();
     shoppingCartService.print();
     String expected =
-        "food -- bread -- 2 -- 20,00 -- 18,00\r\n"
-            + "fashion -- pants -- 2 -- 200,00 -- 200,00\r\n"
-            + "221,23 -- 3,23";
+        "Category Title: food -- Product Name: bread -- Product Quantity: 2 -- Original Price: 20,00 -- Price After Discount: 18,00\r\n"
+            + "Category Title: fashion -- Product Name: pants -- Product Quantity: 2 -- Original Price: 200,00 -- Price After Discount: 200,00\r\n"
+            + "Total Price: 221,23 -- Shipping Price: 3,23";
     Assert.assertEquals(expected, outContent.toString().trim());
   }
 
@@ -248,9 +249,9 @@ public class ShoppingCartServiceImplTest {
     shoppingCartService.calculateDeliveryCost();
     shoppingCartService.print();
     String expected =
-        "food -- bread -- 2 -- 20,00 -- 14,48\r\n"
-            + "fashion -- pants -- 2 -- 200,00 -- 154,72\r\n"
-            + "172,43 -- 3,23";
+        "Category Title: food -- Product Name: bread -- Product Quantity: 2 -- Original Price: 20,00 -- Price After Discount: 14,48\r\n"
+            + "Category Title: fashion -- Product Name: pants -- Product Quantity: 2 -- Original Price: 200,00 -- Price After Discount: 154,72\r\n"
+            + "Total Price: 172,43 -- Shipping Price: 3,23";
     Assert.assertEquals(expected, outContent.toString().trim());
   }
 }
