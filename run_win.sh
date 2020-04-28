@@ -4,7 +4,7 @@ JARFILE=./shopping-cart-app/target/shopping-cart-app-1.0-SNAPSHOT.jar
 
 # Build the application and generate the executable
 if  mvn -v | egrep "\S+\s+Maven"; then
-        mvn -B -T 4C clean install -Dskiptests
+        mvn -B -T 4C clean install -DskipTests
     else
         echo "Maven is not installed, please make sure to setup maven"
 fi

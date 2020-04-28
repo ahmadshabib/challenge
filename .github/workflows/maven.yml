@@ -21,8 +21,4 @@ jobs:
         with:
           java-version: 1.8
       - name : Prepare
-        run: mvn -B -T 4C clean install
-      - name: Build with Maven
-        run: mvn -B package --file pom.xml -T 4C -DskipTests
-      - name: Run tests
-        run: mvn -T 4C test
+        run: mvn -B -T 4C clean install -DskipTests
